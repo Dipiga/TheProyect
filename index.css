@@ -177,3 +177,20 @@ body {
 }
 
 /* BUTTON SHIT */
+
+/*Animation for entry*/
+
+body {
+  animation: transitionIn 0.5s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+
+/*Animation for entry*/
