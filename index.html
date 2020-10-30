@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="index.css" href="menu.css" />
+    <link rel="stylesheet" href="pruebas.css" href="menu.css" />
 
     <style>
       /*Menu styling*/
@@ -58,7 +58,7 @@
       /*Menu styling*/
     </style>
 
-    <title>The Project</title>
+    <title>The Proyect</title>
   </head>
 
   <body onload="checkLocalStorage()">
@@ -67,7 +67,9 @@
 
       <a class="upscale" href="#">Unavailable</a>
       <a class="upscale" href="./pruebas.html">Pruebas</a>
-      <a class="upscale downpos" onclick="switchMode()">Toggle Dark Mode</a>
+      <a class="upscale downpos" onclick="closeNav(); switchMode();"
+        >Toggle Dark Mode</a
+      >
 
       <!--Menu items-->
 
@@ -100,15 +102,24 @@
             document.body.style.background = "#000000";
             var glitch = document.getElementById("glitch");
             glitch.style.color = "white";
-            var button = document.getElementById("button");
-            button.classList.toggle("dark");
+            var equis = document.getElementById("button");
+            equis.style.background = "white";
+            var equis1 = document.getElementById("button1");
+            equis1.style.background = "white";
+            var equis2 = document.getElementById("button2");
+            equis2.style.background = "white";
+
             //changes varibles for when the darkMode is ON
           } else {
             document.body.style.background = "#ffffff";
             var glitch = document.getElementById("glitch");
             glitch.style.color = "black";
-            var button = document.getElementById("button");
-            button.classList.toggle("dark");
+            var equis = document.getElementById("button");
+            equis.style.background = "black";
+            var equis1 = document.getElementById("button1");
+            equis1.style.background = "black";
+            var equis2 = document.getElementById("button2");
+            equis2.style.background = "black";
             //changes varibles for when the darkMode is OFF
           }
         }
@@ -117,13 +128,11 @@
       <!--DarkMode Script-->
     </div>
 
-    <!--Glitch Title-->
-
+    <!--Title Glitch-->
     <div id="glitch" class="text middle" data-text="The Project">
       The Project
     </div>
-
-    <!--Glitch Title-->
+    <!--Title Glitch-->
 
     <!--Menu Opening & Closing Scripts-->
 
@@ -131,6 +140,8 @@
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         var inp = document.getElementById("buttonAction");
+        const menuBtn = document.querySelector(".menu-button");
+        menuBtn.classList.add("open");
         inp.onclick = closeNav;
         var equis = document.getElementById("button");
         equis.style.background = "transparent";
@@ -140,12 +151,22 @@
         document.getElementById("mySidenav").style.width = "0";
         var inp = document.getElementById("buttonAction");
         inp.onclick = openNav;
+        const menuBtn = document.querySelector(".menu-button");
+        menuBtn.classList.remove("open");
         if (localStorage.getItem("isDark") === "true") {
           var equis = document.getElementById("button");
           equis.style.background = "white";
+          var equis1 = document.getElementById("button1");
+          equis1.style.background = "white";
+          var equis2 = document.getElementById("button2");
+          equis2.style.background = "white";
         } else {
           var equis = document.getElementById("button");
           equis.style.background = "black";
+          var equis1 = document.getElementById("button1");
+          equis1.style.background = "black";
+          var equis2 = document.getElementById("button2");
+          equis2.style.background = "black";
         }
       }
     </script>
@@ -156,8 +177,9 @@
 
     <div id="buttonAction" class="menu-button" onclick="openNav()">
       <div id="button" class="menu-button_burger"></div>
+      <div id="button1" class="menu-button_burger_before"></div>
+      <div id="button2" class="menu-button_burger_after"></div>
     </div>
-    <script src="index.js"></script>
 
     <!--Button-->
   </body>

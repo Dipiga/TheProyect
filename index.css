@@ -136,22 +136,25 @@ body {
   box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
   transition: all 0.5s ease-in-out;
 }
-.menu-button_burger::before,
-.menu-button_burger::after {
-  content: "";
-  position: absolute;
+.menu-button_burger_before {
+  position: relative;
+  bottom: 15px;
   width: 30px;
   height: 4px;
   background: #000000;
-  border-radius: 3px;
-  box-shadow: 0 2px 5px rgba(36, 75, 99, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
   transition: all 0.5s ease-in-out;
 }
-.menu-button_burger::before {
-  transform: translateY(-10px);
-}
-.menu-button_burger::after {
-  transform: translateY(10px);
+.menu-button_burger_after {
+  position: relative;
+  top: 3px;
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
+  transition: all 0.5s ease-in-out;
 }
 
 /* Animation for Button */
@@ -162,11 +165,15 @@ body {
   background: transparent;
   box-shadow: none;
 }
-.menu-button.open .menu-button_burger::before {
-  transform: rotate(45deg) translate(15px, -15px);
+
+.menu-button.open .menu-button_burger_before {
+  transform: rotate(-45deg) translate(170px, 185px);
+  transition: all 0.5s ease-in-out;
 }
-.menu-button.open .menu-button_burger::after {
-  transform: rotate(-45deg) translate(15px, 15px);
+
+.menu-button.open .menu-button_burger_after {
+  transform: rotate(45deg) translate(170px, -185px);
+  transition: all 0.5s ease-in-out;
 }
 
 /* BUTTON SHIT */
