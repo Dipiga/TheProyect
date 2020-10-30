@@ -16,7 +16,7 @@
         left: 0;
         background-color: #111;
         overflow-x: hidden;
-        transition: 0.5s;
+        transition: 0.7s;
         padding-top: 60px;
       }
 
@@ -101,14 +101,14 @@
             var glitch = document.getElementById("glitch");
             glitch.style.color = "white";
             var button = document.getElementById("button");
-            button.style.background ="white";
+            button.classList.toggle("dark");
             //changes varibles for when the darkMode is ON
           } else {
             document.body.style.background = "#ffffff";
             var glitch = document.getElementById("glitch");
             glitch.style.color = "black";
             var button = document.getElementById("button");
-            button.style.background ="black";
+            button.classList.toggle("dark");
             //changes varibles for when the darkMode is OFF
           }
         }
@@ -133,19 +133,19 @@
         var inp = document.getElementById("buttonAction");
         inp.onclick = closeNav;
         var equis = document.getElementById("button");
-        equis.style.background ="transparent";
+        equis.style.background = "transparent";
       }
 
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         var inp = document.getElementById("buttonAction");
         inp.onclick = openNav;
-        if (localStorage.getItem("isDark") === "true"){
+        if (localStorage.getItem("isDark") === "true") {
           var equis = document.getElementById("button");
-          equis.style.background ="white";
+          equis.style.background = "white";
         } else {
           var equis = document.getElementById("button");
-          equis.style.background ="black";
+          equis.style.background = "black";
         }
       }
     </script>

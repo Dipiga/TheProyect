@@ -107,6 +107,10 @@ body {
 
 /* BUTTON SHIT */
 
+.dark {
+  background: #ffffff;
+}
+
 .menu-button {
   position: absolute;
   float: left;
@@ -129,7 +133,7 @@ body {
   height: 4px;
   background: #000000;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(69, 36, 99, 0.8);
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
   transition: all 0.5s ease-in-out;
 }
 .menu-button_burger::before,

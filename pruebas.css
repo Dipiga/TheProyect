@@ -1,0 +1,187 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+.center {
+  line-height: 10px;
+  height: 10px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 70px 0;
+}
+
+.right_bottom {
+  float: right;
+  bottom: 2%;
+  right: 2%;
+  position: fixed;
+  font-size: 100%;
+}
+
+.downpos {
+  float: left;
+  bottom: 10%;
+  right: 10%;
+  position: absolute;
+  font-size: 100%;
+}
+
+.menuicon {
+  float: left;
+  top: 5%;
+  left: 3%;
+  position: absolute;
+}
+
+.upscale {
+  transition: transform 0.1s;
+}
+
+.upscale:hover {
+  transform: scale(1.1);
+}
+
+/* GLITCH EFFECT */
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 14px;
+}
+
+.text::before,
+.text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.text::before {
+  color: #ff00c1;
+  animation: glitch-effect 3s infinite;
+}
+
+.text::after {
+  color: #3498db;
+  animation: glitch-effect 2s infinite;
+}
+
+@keyframes glitch-effect {
+  0% {
+    left: -3px;
+    top: -3px;
+  }
+  25% {
+    left: 3px;
+    top: 0px;
+  }
+  50% {
+    left: -2px;
+    top: 3px;
+  }
+  75% {
+    left: 2px;
+    top: -2px;
+  }
+  100% {
+    left: 0px;
+    top: -3px;
+  }
+}
+
+/* GLITCH EFFECT */
+
+/* BUTTON SHIT */
+
+.dark {
+  background: #ffffff;
+}
+
+.menu-button {
+  position: absolute;
+  float: left;
+  top: 5%;
+  left: 3%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
+}
+.menu-button .menu {
+  transition: 0.5s;
+  left: 400px;
+}
+.menu-button_burger {
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
+  transition: all 0.5s ease-in-out;
+}
+.menu-button_burger_before {
+  position: relative;
+  bottom: 15px;
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
+  transition: all 0.5s ease-in-out;
+}
+.menu-button_burger_after {
+  position: relative;
+  top: 3px;
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.8);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Animation for Button */
+
+.menu-button.open .menu-button_burger {
+  transition: all 0.5s ease-in-out;
+  transform: translateX(200px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-button.open .menu-button_burger_before {
+  transform: rotate(45deg) translate(15px, -15px);
+  transition: all 0.5s ease-in-out;
+  transform: translateX(200px);
+}
+.menu-button.open .menu-button_burger_before {
+  transform: rotate(45deg) translate(15px, -15px);
+}
+
+.menu-button.open .menu-button_burger_after {
+  transform: rotate(-45deg) translate(15px, 15px);
+  transition: all 0.5s ease-in-out;
+  transform: translateX(200px);
+}
+.menu-button.open .menu-button_burger_after {
+  transform: rotate(-45deg) translate(15px, -15px);
+}
+
+/* BUTTON SHIT */
