@@ -2,178 +2,30 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="pruebas.css" href="menu.css" />
-
-    <style>
-      /*Menu styling*/
-
-      .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.7s;
-        padding-top: 60px;
-      }
-
-      .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .sidenav a:hover {
-        color: #f1f1f1;
-      }
-
-      .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
-
-      #main {
-        transition: margin-left 0.5s;
-        padding: 16px;
-      }
-
-      @media screen and (max-height: 450px) {
-        .sidenav {
-          padding-top: 15px;
-        }
-        .sidenav a {
-          font-size: 18px;
-        }
-      }
-
-      /*Menu styling*/
-    </style>
-
+    <link rel="stylesheet" href="pruebas.css"/>
+    <link rel="stylesheet" href="menu.css">
     <title>The Proyect</title>
   </head>
-
   <body onload="checkLocalStorage()">
-    <div id="mySidenav" class="sidenav">
-      <!--Menu items-->
 
+  <!--Menu items-->
+
+    <div id="mySidenav" class="sidenav">
       <a class="upscale" href="#">Unavailable</a>
       <a class="upscale" href="./pruebas.html">Pruebas</a>
-      <a class="upscale downpos" onclick="closeNav(); switchMode();"
-        >Toggle Dark Mode</a
-      >
-
-      <!--Menu items-->
-
-      <!--DarkMode Script-->
-
-      <script>
-        function checkLocalStorage() {
-          if (localStorage.getItem("isDark") === null) {
-            localStorage.setItem("isDark", "false");
-            //gives the localStorage variable a value of false if the variable doesn´t exists
-          } else {
-            darkMode();
-            //executes function darkMode() in case variable already exists
-          }
-        }
-
-        function switchMode() {
-          if (localStorage.getItem("isDark") == "true") {
-            localStorage.setItem("isDark", "false");
-            //Switches dark mode variable to false if == true
-          } else {
-            localStorage.setItem("isDark", "true");
-            //Switches dark mode variable to true if == false
-          }
-          darkMode();
-        }
-
-        function darkMode() {
-          if (localStorage.getItem("isDark") === "true") {
-            document.body.style.background = "#000000";
-            var glitch = document.getElementById("glitch");
-            glitch.style.color = "white";
-            var equis = document.getElementById("button");
-            equis.style.background = "white";
-            var equis1 = document.getElementById("button1");
-            equis1.style.background = "white";
-            var equis2 = document.getElementById("button2");
-            equis2.style.background = "white";
-
-            //changes varibles for when the darkMode is ON
-          } else {
-            document.body.style.background = "#ffffff";
-            var glitch = document.getElementById("glitch");
-            glitch.style.color = "black";
-            var equis = document.getElementById("button");
-            equis.style.background = "black";
-            var equis1 = document.getElementById("button1");
-            equis1.style.background = "black";
-            var equis2 = document.getElementById("button2");
-            equis2.style.background = "black";
-            //changes varibles for when the darkMode is OFF
-          }
-        }
-      </script>
-
-      <!--DarkMode Script-->
+      <a
+      class="upscale downpos" 
+      nclick="closeNav(); switchMode();"
+      >Toggle Dark Mode</a>
     </div>
 
     <!--Title Glitch-->
+
     <div id="glitch" class="text middle" data-text="The Project">
       The Project
     </div>
-    <!--Title Glitch-->
 
-    <!--Menu Opening & Closing Scripts-->
-
-    <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        var inp = document.getElementById("buttonAction");
-        const menuBtn = document.querySelector(".menu-button");
-        menuBtn.classList.add("open");
-        inp.onclick = closeNav;
-        var equis = document.getElementById("button");
-        equis.style.background = "transparent";
-      }
-
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        var inp = document.getElementById("buttonAction");
-        inp.onclick = openNav;
-        const menuBtn = document.querySelector(".menu-button");
-        menuBtn.classList.remove("open");
-        if (localStorage.getItem("isDark") === "true") {
-          var equis = document.getElementById("button");
-          equis.style.background = "white";
-          var equis1 = document.getElementById("button1");
-          equis1.style.background = "white";
-          var equis2 = document.getElementById("button2");
-          equis2.style.background = "white";
-        } else {
-          var equis = document.getElementById("button");
-          equis.style.background = "black";
-          var equis1 = document.getElementById("button1");
-          equis1.style.background = "black";
-          var equis2 = document.getElementById("button2");
-          equis2.style.background = "black";
-        }
-      }
-    </script>
-
-    <!--Menu Opening & Closing Scripts-->
-
-    <!--Button-->
+    <!--Open-Clone Nav Button-->
 
     <div id="buttonAction" class="menu-button" onclick="openNav()">
       <div id="button" class="menu-button_burger"></div>
@@ -181,6 +33,6 @@
       <div id="button2" class="menu-button_burger_after"></div>
     </div>
 
-    <!--Button-->
+    <script src="./index.js"></script>
   </body>
 </html>
