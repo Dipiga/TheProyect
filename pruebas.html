@@ -133,6 +133,10 @@
         if (localStorage.getItem("isDark") === "true") {
           var equis = document.getElementById("button");
           equis.style.background = "white";
+          var equis1 = document.getElementById("button1");
+          equis1.style.background = "white";
+          var equis2 = document.getElementById("button2");
+          equis2.style.background = "white";
         } else {
           var equis = document.getElementById("button");
           equis.style.background = "black";
@@ -146,8 +150,8 @@
 
     <div id="buttonAction" class="menu-button" onclick="openNav()">
       <div id="button" class="menu-button_burger"></div>
-      <div id="button" class="menu-button_burger_before"></div>
-      <div id="button" class="menu-button_burger_after"></div>
+      <div id="button1" class="menu-button_burger_before"></div>
+      <div id="button2" class="menu-button_burger_after"></div>
     </div>
     <script src="index.js"></script>
 
